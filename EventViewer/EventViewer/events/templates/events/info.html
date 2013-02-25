@@ -1,0 +1,27 @@
+{% include "events/header.html" %}
+
+
+<div id="header"><h1>Event info</h1></div>
+<div id="main">
+	<div id="content">
+		<p>	
+{% if current_event %}
+        Code: {{ current_event.code }}<br>
+        Date: {{ current_event.strdate }}<br>
+        UID: {{ current_event.uid }}<br>
+        data: 
+        {% for key, value in current_event.ext_data %}
+    		{{ key }}: {{ value }}
+		{% endfor %}
+		<br>
+{% else %}
+    <p>Unknown event</p>
+{% endif %}
+		</p>
+<br>
+<p><a href="/events/">Return</a></p>
+	</div>
+</div>
+
+
+{% include "events/footer.html" %}

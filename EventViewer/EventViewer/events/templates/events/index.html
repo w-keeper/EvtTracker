@@ -1,0 +1,17 @@
+{% include "events/header.html" %}
+
+
+<div id="header"><h1>Registered events</h1></div>
+<div id="main">
+	<div id="content">
+	{% if events_list %}
+	    <ul>
+	    {% for event in events_list %}
+	        <li>{{ event.strdate }} &nbsp;&nbsp;&nbsp;  {{ event.code }} &nbsp;&nbsp; <a href="/events/{{ event.id }}/">Info</a></li>
+	    {% endfor %}
+	    </ul>
+	{% else %}
+	    <p>No events in database</p>
+	{% endif %}
+	</div>
+</div>
